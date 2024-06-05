@@ -6,17 +6,17 @@ import { PhotoFormComponent } from './components/photo-form/photo-form.component
 
 const routes: Routes = [
 {
-path:"photo/:id",
-component:PhotoReviewComponent
+path:"photos",
+component:PhotoListComponent
 
 },
 {
-path:"photos",
-component: PhotoListComponent
+path:"photo/new",
+component: PhotoFormComponent
 },
 {
-path:"photo/new",
-component:PhotoFormComponent
+path:"photo/:id",
+component:PhotoReviewComponent
 },{
   
     path: '',

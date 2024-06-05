@@ -1,24 +1,27 @@
 <div class="col-lg-4 mx-auto">
+<form (submit)="UploadPhoto(titulo, description)">
     <div class="card">
-        <div class="card-header">
-            Upload a Photo
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Photo's Title" #title required>
-                </div>
-                <div class="form-group">
-                    <textarea rows="2" class="form-control" placeholder="Photo's Description" required #description></textarea>
-                </div>
+        <div class="card-header">Photo Uploader</div>
 
-                <input type="file" class="d-none" #photoInput>
-                <img [src]="'assets/no-image.png'" class="img-fluid" alt="No image">
+                                <div class="card-body">
+                              <div class="form-group">
+                            <label for="">Titulo</label>
+                          <input #titulo type="text" class="form-control">   
+                         </div>
+                            <div class="form-group">
+                             <label for="">Description</label>
+                          <input #description type="text" class="form-control">
+                              </div>
+                        <div class="form-group">
+                            <label for="">Upload image</label> 
+                            <input type="file" class="d-none" (change)="onPhotoSelected($event)"#Photoinput>
 
-                <button class="btn btn-primary btn-block">
-                    Upload
-                </button>
-            </form>
-        </div>
-    </div>
+                            <img class="img-fluid" [src]="photoSelected ||'assets/no-photo.png'" (click)="Photoinput.click"/> 
+                        <button class="btn btn-primary btn-block">Upload</button>
+                        </div>   
+                    </div>
+                </div>
+            
+
+</form>
 </div>
